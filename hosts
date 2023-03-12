@@ -1,14 +1,14 @@
-[control_plane]
-k-master ansible_host=192.168.15.30
+[controlplane]
+k-controlplane ansible_host=192.168.15.30
 
-[worker_node]
+[workers]
 k-w01 ansible_host=192.168.15.31
 k-w02 ansible_host=192.168.15.32
 
-[control_plane:vars]
+[controlplane:vars]
 ansible_user=cadu
 ansible_ssh_private_key_file=/home/cadu/.ssh/id_rsa.pub
 
-[worker_node:vars]
+[workers:vars]
 ansible_user=cadu
 ansible_ssh_private_key_file=/home/cadu/.ssh/id_rsa.pub
