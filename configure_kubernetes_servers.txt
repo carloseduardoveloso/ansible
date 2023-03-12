@@ -1,0 +1,10 @@
+apt udpate
+apt upgrade
+hostnamectl set-hostname <servername>
+
+install phyton dependences
+
+apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev libbz2-dev -y
+apt install python3 -y
+python3 --version
+
