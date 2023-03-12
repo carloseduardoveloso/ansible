@@ -1,0 +1,24 @@
+- name: Ensure pre reqs is installed
+  hosts: all
+  become: true
+  tasks:
+    - name: Update so
+      ansible.builtin.package:
+        update_cache: true
+        cache_valid_time: 3600
+
+    - name: Install basic softwares
+      ansible.builtin.package:
+        name: "{{ packages }}"
+        state: present
+      vars:
+        packages:
+          - apt-transport-https
+          - ca-certificates
+          - curl
+          - software-properties-common
+          - gnupg-agent
+          - python3-pip
+          - mc
+          - neofetch
+          - git

@@ -1,0 +1,18 @@
+---
+- name: Kube user configuration
+  hosts: all
+  become: true
+  tasks:
+
+  - name: Kube user create
+    ansible.builtin.user:
+      name: kube
+      groups: sudo
+      shell: /bin/bash
+      expires: -1
+      append: true
+
+  - name: Add cadu user in sudoers
+    ansible.builtin.lineinfile:
+      path: /etc/sudoers
+      line: 'kube ALL=(ALL) NOPASSWD:ALL'

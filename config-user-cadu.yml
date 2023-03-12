@@ -1,0 +1,9 @@
+---
+- name: Cadu user configuration
+  hosts: all
+  become: true
+  tasks:
+  - name: Add cadu user in sudoers
+    ansible.builtin.lineinfile:
+      path: /etc/sudoers
+      line: 'cadu ALL=(ALL) NOPASSWD:ALL'
